@@ -9,7 +9,7 @@ import Tagy from './pages/tagy';
 
 const routes = (
     <Router history={hashHistory}>
-        <Route history={hashHistory} path="/" component={Layout}>
+        <Route path="/" component={Layout}>
             <IndexRoute component={Domu}/>
             <IndexRedirect to="domu" />
             <Route path="domu" component={Domu}/>

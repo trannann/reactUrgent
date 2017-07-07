@@ -15,15 +15,15 @@ export default class Header extends React.Component {
                 <Nav>
                     <LinkContainer to="/Domu">
                         <NavItem eventKey={1}>Domu</NavItem>
-                        <Link to="/domu">About</Link>
+                        {/*<Link to="/domu">About</Link>*/}
                     </LinkContainer>
                     <LinkContainer to="/Pacienti">
                         <NavItem eventKey={2}>Pacienti</NavItem>
-                        <Link to="/pacienti">About</Link>
+                        {/*<Link to="/pacienti">About</Link>*/}
                     </LinkContainer>
                     <LinkContainer to="/Tagy">
                         <NavItem eventKey={2}>Tagy</NavItem>
-                        <Link to="/tagy">About</Link>
+                        {/*<Link to="/tagy">About</Link>*/}
                     </LinkContainer>
                 </Nav>
                 
