@@ -13,8 +13,23 @@ export default class Pacienti extends React.Component {
     constructor() {
         super();
 
+        this.state = {
+            showModal: false
+        };
+
         this.handleChange = this.handleChange.bind(this);
+        this.open = this.open.bind(this);
+        this.close = this.close.bind(this);
     }
+
+    open() {
+        this.setState({showModal: true});
+    }
+
+    close() {
+        this.setState({showModal: false});
+    }
+
     handleChange(e) {
         this.props.dispatch(changePatientsFilter(e.target.value));
     }
@@ -34,31 +49,34 @@ export default class Pacienti extends React.Component {
                         />
                     </div>
                     <div className="col-sm-3">
-                        <Button bsSize="small">
-                            <strong>Register pacient</strong>
-                            <div className="static-modal">
-                                <Modal.Dialog>
-                                <Modal.Header>
-                                    <Modal.Title>Modal title</Modal.Title>
-                                </Modal.Header>
+                        <Button bsSize="small" onClick={this.open}>Register pacient</Button>
+                         <div>
+                            <Modal className="modal-container" 
+                            show={this.state.showModal} 
+                            onHide={this.close}
+                            animation={true} 
+                            bsSize="small">
 
-                                <Modal.Body>
-                                    One fine body...
-                                </Modal.Body>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Modal title</Modal.Title>
+                            </Modal.Header>
 
-                                <Modal.Footer>
-                                    <Button>Close</Button>
-                                    <Button bsStyle="primary">Save changes</Button>
-                                </Modal.Footer>
+                            <Modal.Body>
+                                One of fine body.........
+                            </Modal.Body>
 
-                                </Modal.Dialog>
-                            </div>
-                        </Button>
+                            <Modal.Footer>
+                                <Button onClick={this.close}>Close</Button>
+                                <Button bsStyle="primary">Save changes</Button>
+                            </Modal.Footer>         
+                            </Modal> 
+                        </div>
                     </div>
                 </h2>
                 <br></br>
                 <br></br>
                 <br></br>
+                
                 <Table striped bordered condensed hover>
                     <thead>
                     <tr>

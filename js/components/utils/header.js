@@ -22,7 +22,7 @@ export default class Header extends React.Component {
                         {/*<Link to="/pacienti">About</Link>*/}
                     </LinkContainer>
                     <LinkContainer to="/Tagy">
-                        <NavItem eventKey={2}>Tagy</NavItem>
+                        <NavItem eventKey={3}>Tagy</NavItem>
                         {/*<Link to="/tagy">About</Link>*/}
                     </LinkContainer>
                 </Nav>

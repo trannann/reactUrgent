@@ -8,16 +8,14 @@ import Pacienti from './pages/pacienti';
 import Tagy from './pages/tagy';
 
 const routes = (
-    <Router history={hashHistory}>
-        <Route path="/" component={Layout}>
-            <IndexRoute component={Domu}/>
-            <IndexRedirect to="domu" />
-            <Route path="domu" component={Domu}/>
-            <Route path="pacienti" component={Pacienti}/>
-            <Redirect from="*" to="pacienti" />
-            <Route path="tagy" component={Tagy}/>
-        </Route>
-    </Router>
+    <Route path="/" component={Layout}>
+        <IndexRoute component={Domu}/>
+        <IndexRedirect to="domu" />
+        <Route path="domu" component={Domu}/>
+        <Route path="pacienti" component={Pacienti}/>
+        <Redirect from="*" to="pacienti" />
+        <Route path="tagy" component={Tagy}/>
+    </Route>
 );
 
 export default routes;
