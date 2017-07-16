@@ -6,6 +6,7 @@ import Layout from './components/utils/layout';
 import Domu from './pages/domu';
 import Pacienti from './pages/pacienti';
 import Tagy from './pages/tagy';
+import PacientiRegistrace from './pages/pacientiRegistrace';
 
 const routes = (
     <Route path="/" component={Layout}>
@@ -13,8 +14,9 @@ const routes = (
         <IndexRedirect to="domu" />
         <Route path="domu" component={Domu}/>
         <Route path="pacienti" component={Pacienti}/>
-        <Redirect from="*" to="pacienti" />
+        <Route path="pacientinew" component={PacientiRegistrace}/>
         <Route path="tagy" component={Tagy}/>
+        <Redirect from="*" to="domu" />
     </Route>
 );
 

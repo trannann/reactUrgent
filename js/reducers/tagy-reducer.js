@@ -1,4 +1,4 @@
-const pacientiInitialState = {
+const tagyInitialState = {
     tagy: 'tag'
 }
 

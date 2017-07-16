@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Button, FormControl, Table, Modal } from 'react-bootstrap';
+import {browserHistory} from 'react-router';
 
 import { changePatientsFilter } from '../actions/domu-actions';
+import PacientiRegistrace from './pacientiRegistrace';
 
 @connect((store) => {
     return {
@@ -30,6 +32,10 @@ export default class Pacienti extends React.Component {
         this.setState({showModal: false});
     }
 
+    handleClick() {
+        browserHistory.push('/pacientinew');
+    };
+
     handleChange(e) {
         this.props.dispatch(changePatientsFilter(e.target.value));
     }
@@ -38,7 +44,7 @@ export default class Pacienti extends React.Component {
             <div className="row">
                 <h2>
                     <div className="col-sm-3">
-                        Active pacients
+                        Aktivní pacienti
                     </div>
                     <div className="col-sm-3">
                         <FormControl
@@ -49,7 +55,7 @@ export default class Pacienti extends React.Component {
                         />
                     </div>
                     <div className="col-sm-3">
-                        <Button bsSize="small" onClick={this.open}>Register pacient</Button>
+                        <Button bsSize="small" onClick={this.handleClick}>Registrovat pacienta</Button>
                          <div>
                             <Modal className="modal-container" 
                             show={this.state.showModal} 
@@ -58,7 +64,7 @@ export default class Pacienti extends React.Component {
                             bsSize="small">
 
                             <Modal.Header closeButton>
-                                <Modal.Title>Modal title</Modal.Title>
+                                <Modal.Title>Registrace nového pacienta</Modal.Title>
                             </Modal.Header>
 
                             <Modal.Body>
@@ -67,7 +73,7 @@ export default class Pacienti extends React.Component {
 
                             <Modal.Footer>
                                 <Button onClick={this.close}>Close</Button>
-                                <Button bsStyle="primary">Save changes</Button>
+                                <Button bsStyle="primary">Přidat</Button>
                             </Modal.Footer>         
                             </Modal> 
                         </div>
@@ -76,7 +82,7 @@ export default class Pacienti extends React.Component {
                 <br></br>
                 <br></br>
                 <br></br>
-                
+
                 <Table striped bordered condensed hover>
                     <thead>
                     <tr>

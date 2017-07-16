@@ -10,20 +10,17 @@ export default class Header extends React.Component {
         <Navbar inverse>
             <Navbar.Header>
                 <Navbar.Brand>
-                    <span style={{paddingLeft: '1em'}}>FNO - Urgent</span>
+                    <span style={{paddingLeft: '1em'}}><a href="/Domu" style={{ textDecoration: 'none' }}><font color="white">FNO - Urgent</font></a></span>
                 </Navbar.Brand>
                 <Nav>
                     <LinkContainer to="/Domu">
                         <NavItem eventKey={1}>Domu</NavItem>
-                        {/*<Link to="/domu">About</Link>*/}
                     </LinkContainer>
                     <LinkContainer to="/Pacienti">
                         <NavItem eventKey={2}>Pacienti</NavItem>
-                        {/*<Link to="/pacienti">About</Link>*/}
                     </LinkContainer>
                     <LinkContainer to="/Tagy">
                         <NavItem eventKey={3}>Tagy</NavItem>
-                        {/*<Link to="/tagy">About</Link>*/}
                     </LinkContainer>
                 </Nav>
                 
